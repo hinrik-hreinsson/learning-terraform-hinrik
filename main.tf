@@ -24,7 +24,7 @@ module "blog_vpc" {
   name = "dev"
   cidr = "10.0.0.0/16"
 
-  azs             = ["eu-west-1a", "ueu-west-1b", "eu-west-1c"]
+  azs             = ["eu-west1-az1", "eu-west1-az2", "eu-west-az3"]
   public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
 
   tags = {
@@ -43,7 +43,7 @@ resource "aws_instance" "blog" {
   tags = {
     Name = "Learning Terraform"
   }
-}
+} 
 
 module "blog_sg" {
   source  = "terraform-aws-modules/security-group/aws"
